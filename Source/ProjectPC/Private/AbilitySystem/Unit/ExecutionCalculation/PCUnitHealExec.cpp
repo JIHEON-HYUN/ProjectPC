@@ -6,11 +6,6 @@
 #include "AbilitySystemComponent.h"
 #include "AbilitySystem/Unit/AttributeSet/PCUnitAttributeSet.h"
 
-
-UPCUnitHealExec::UPCUnitHealExec()
-{
-}
-
 void UPCUnitHealExec::Execute_Implementation(const FGameplayEffectCustomExecutionParameters& ExecutionParams,
                                              FGameplayEffectCustomExecutionOutput& OutExecutionOutput) const
 {

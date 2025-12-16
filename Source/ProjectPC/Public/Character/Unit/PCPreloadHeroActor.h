@@ -11,7 +11,7 @@ UCLASS()
 class PROJECTPC_API APCPreloadHeroActor : public AActor
 {
 	GENERATED_BODY()
-	
+
 public:	
 	APCPreloadHeroActor();
 

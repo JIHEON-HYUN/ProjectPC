@@ -31,7 +31,6 @@ public:
 	
 	virtual bool HasLevelSystem() const override { return true; }
 	virtual int32 GetUnitLevel() const override { return HeroLevel; };
-	virtual void SetUnitLevel(const int32 Level) override;
 	void Combine(const APCHeroUnitCharacter* LevelUpHero);
 	void SellHero();
 	void LevelUp();
@@ -40,6 +39,8 @@ public:
 	virtual void SetUnitDataAsset(UPCDataAsset_BaseUnitData* InUnitDataAsset) override;
 	
 protected:
+	virtual void SetUnitLevel(const int32 Level) override;
+	
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 	virtual void GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const override;

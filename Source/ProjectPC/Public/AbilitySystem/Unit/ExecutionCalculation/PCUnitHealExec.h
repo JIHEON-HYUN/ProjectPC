@@ -14,9 +14,6 @@ UCLASS()
 class PROJECTPC_API UPCUnitHealExec : public UGameplayEffectExecutionCalculation
 {
 	GENERATED_BODY()
-
-public:
-	UPCUnitHealExec();
 	
 protected:
 	FGameplayTag HealCallerTag = GameplayEffectTags::GE_Caller_Heal;

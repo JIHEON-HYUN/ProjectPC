@@ -233,10 +233,7 @@ void APCHeroUnitCharacter::ActionDrag(const bool IsStart)
 
 void APCHeroUnitCharacter::OnRep_IsDragging() const
 {
-	if (USkeletalMeshComponent* SkMesh = GetMesh())
-	{
-		SetMeshVisibility(!bIsDragging);
-	}
+	SetMeshVisibility(!bIsDragging);
 }
 
 void APCHeroUnitCharacter::OnSynergyTagChanged(const FGameplayTag Tag, int32 NewCount) const

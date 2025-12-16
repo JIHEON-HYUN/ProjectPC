@@ -315,7 +315,7 @@ void UPCSynergyBase::GrantEffects(const FSynergyApplyParams& Params, const FSyne
 {
 	if (!Tier)
 		return;
-	
+
 	TArray<APCHeroUnitCharacter*> Recipients;
 	SelectRecipients(Params, *Tier, Recipients);
 	if (Recipients.Num() == 0) return;

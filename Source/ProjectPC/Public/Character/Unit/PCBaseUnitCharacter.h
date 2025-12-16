@@ -24,7 +24,7 @@ UCLASS()
 class PROJECTPC_API APCBaseUnitCharacter : public APCCommonUnitCharacter, public IGenericTeamAgentInterface
 {
 	GENERATED_BODY()
-
+	
 public:
 	APCBaseUnitCharacter(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 	
@@ -157,7 +157,7 @@ protected:
 	UPROPERTY(BlueprintReadOnly, Category="Combat")
 	bool bIsStunned = false;
 
-	FVector DeadZone = FVector(25000.f, 10000.f,50.f);
+	FVector DeadZone = FVector(25000.f, 10000.f, 50.f);
 	
 	FDelegateHandle DeadHandle;
 	FDelegateHandle StunHandle;

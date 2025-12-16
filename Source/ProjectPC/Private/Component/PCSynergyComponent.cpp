@@ -166,7 +166,6 @@ void UPCSynergyComponent::RegisterHero(APCHeroUnitCharacter* Hero)
 		for (const FGameplayTag& SynergyTag : SynergyTags)
 		{
 			ApplySynergyEffects(SynergyTag);
-			//PlaySynergyActiveParticle(SynergyTag);
 			
 			GetWorld()->GetTimerManager().SetTimerForNextTick(
 				FTimerDelegate::CreateUObject(this, &UPCSynergyComponent::PlaySynergyActiveParticle, SynergyTag)
@@ -208,13 +207,13 @@ void UPCSynergyComponent::UnRegisterHero(APCHeroUnitCharacter* Hero)
 				RemoveSynergyTags.AddTag(SynergyTag);
 		}
 		
+		if (SynergyTally.IsEmpty())
+			HeroSynergyMap.Remove(HeroTag);
+
 		if (!RemoveSynergyTags.IsEmpty())
 		{
 			UpdateSynergyCountMap(RemoveSynergyTags, false);
 		}
-
-		if (SynergyTally.IsEmpty())
-			HeroSynergyMap.Remove(HeroTag);
 
 		for (const FGameplayTag& SynergyTag : SynergyTags)
 		{
@@ -261,7 +260,7 @@ void UPCSynergyComponent::UpdateSynergyCountMap(const FGameplayTagContainer& Syn
 		int32& SynergyCnt = SynergyCountMap.FindOrAdd(SynergyTag);
 		if (bRegisterHero)
 		{
-			SynergyCnt++;	
+			SynergyCnt++;
 		}
 		else
 		{
@@ -273,8 +272,7 @@ void UPCSynergyComponent::UpdateSynergyCountMap(const FGameplayTagContainer& Syn
 		}
 	}
 
-	SynergyCountArray.ResetToMap(SynergyCountMap);
-	//DebugPrintSynergyCounts();
+	SynergyCountArray.UpdateToMap(SynergyCountMap);
 }
 
 void UPCSynergyComponent::RecountSynergyCountMapForUnitTag(const FGameplayTag& UnitTag)
@@ -323,8 +321,7 @@ void UPCSynergyComponent::RecountSynergyCountMapForUnitTag(const FGameplayTag& U
 			);
 	}
 
-	SynergyCountArray.ResetToMap(SynergyCountMap);
-	//DebugPrintSynergyCounts();
+	SynergyCountArray.UpdateToMap(SynergyCountMap);
 }
 
 void UPCSynergyComponent::ApplySynergyEffects(const FGameplayTag& SynergyTag)
@@ -483,40 +480,6 @@ void UPCSynergyComponent::GatherRegisteredHeroes(TArray<APCHeroUnitCharacter*>& 
 		else
 		{
 			OutHeroes.Add(It->Get());
-		}
-	}
-}
-
-void UPCSynergyComponent::DebugPrintSynergyCounts(bool bAlsoOnScreen) const
-{
-	// 1) 헤더 라인
-	UE_LOG(LogTemp, Log, TEXT("=== [Synergy] ReplicatedCounts (%d entries) ==="),
-		SynergyCountArray.Entries.Num());
-
-	// 2) 비었으면 안내
-	if (SynergyCountArray.Entries.Num() == 0)
-	{
-		UE_LOG(LogTemp, Log, TEXT("(empty)"));
-		if (bAlsoOnScreen && GEngine)
-		{
-			GEngine->AddOnScreenDebugMessage(
-				/*Key=*/-1, /*Time=*/2.0f, /*Color=*/FColor::Yellow,
-				TEXT("[Synergy] (empty)"));
-		}
-		return;
-	}
-
-	// 3) 항목들 출력
-	for (const FSynergyCountEntry& E : SynergyCountArray.Entries)
-	{
-		const FString TagStr = E.Tag.IsValid() ? E.Tag.ToString() : TEXT("InvalidTag");
-		UE_LOG(LogTemp, Log, TEXT("  %s = %d"), *TagStr, E.Count);
-
-		if (bAlsoOnScreen && GEngine)
-		{
-			GEngine->AddOnScreenDebugMessage(
-				/*Key=*/-1, /*Time=*/2.0f, /*Color=*/FColor::Cyan,
-				FString::Printf(TEXT("[Synergy] %s = %d"), *TagStr, E.Count));
 		}
 	}
 }

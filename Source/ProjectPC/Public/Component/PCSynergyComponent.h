@@ -107,9 +107,4 @@ private:
 	void OnHeroDestroyed(APCHeroUnitCharacter* DestroyedHero);
 	
 	void OnHeroSynergyTagChanged(const APCHeroUnitCharacter* Hero);
-	
-	// 디버그용
-public:
-	UFUNCTION(BlueprintCallable, Category="Synergy|Debug")
-	void DebugPrintSynergyCounts(bool bAlsoOnScreen = true) const;
 };

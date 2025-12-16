@@ -13,19 +13,19 @@ class UPCDataAsset_UnitAbilityConfig;
 UENUM(BlueprintType)
 enum class ESynergyRecipientPolicy : uint8
 {
-	/** 시너지 보유 유닛 중 랜덤 N명 */
+	// 시너지 보유 유닛 중 랜덤 N명
 	RandomAmongOwners UMETA(DisplayName="Random Among Owners"),
 	
-	/** 시너지 보유 유닛 전체 */
+	// 시너지 보유 유닛 전체
 	AllOwners UMETA(DisplayName="All Owners"),
 
-	/** 모든 아군 유닛 중 랜덤 N명 */
+	// 모든 아군 유닛 중 랜덤 N명
 	RandomAmongAllies UMETA(DisplayName="Random Among Allies"),
 	
-	/** 모든 아군 (시너지 보유 여부 무관) */
+	// 모든 아군 (시너지 보유 여부 무관)
 	AllAllies UMETA(DisplayName="All Allies"),
 	
-	/** 커스텀 (코드에서 별도 필터/정책 적용) */
+	// 커스텀 (코드에서 별도 정책 적용)
 	Custom UMETA(DisplayName="Custom (Code)")
 };
 

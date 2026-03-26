@@ -15,18 +15,15 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 - **개발 기간** : 2025.08.25 ~ 2025.11.10 (총 11주)
 - **참여 인원** : 3인 개발
 
-
 ### 기술 스택
 - Unreal Engine 5.4
 - Gameplay Ability System (GAS)
 - Dedicated Server
 
-
 ### 협업 도구
 - Notion  
   - [Project PC Team Notion](https://www.notion.so/4-5-2541f50237ec80e698e7fdd128df643a?pvs=21)
 - SourceTree
-
 
 ### 요구사항
 - 게임 플레이
@@ -40,7 +37,6 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 - 성능
   - 다수의 객체가 동시에 생성/소멸되는 환경에서의 프레임 안정성 확보
   - 위젯 재사용을 통한 GC 부하 최소화
-
 
 ### 담당 구현 내용
   - GAS(Gameplay Ability System) 기반 플레이어 캐릭터 구현

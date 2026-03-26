@@ -9,7 +9,7 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 
 ---
 
-## 1. 프로젝트 개요
+## ✅ 프로젝트 개요
 
 - **프로젝트명** : ProjectPC – Paragon Chess
 - **개발 기간** : 2025.08.25 ~ 2025.11.10 (총 11주)
@@ -46,7 +46,7 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 
 ---
 
-## 2. 구현 목표
+## 🎯 구현 목표
 
 - 언리얼 엔진의 GAS(Gameplay Ability System) 를 활용한 확장 가능한 캐릭터 능력 시스템 구현
 - 서버 권위(Server Authority) 구조 기반으로 데이터 무결성 보장
@@ -56,7 +56,7 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 
 ---
 
-## 3. 게임 플로우
+## 🎮 게임 플로우
 
 - Ip Input Level -> Lobby Level -> Combat Level로 이어지는 선형적 구조
 - 각 레벨별 명확한 책임 분리

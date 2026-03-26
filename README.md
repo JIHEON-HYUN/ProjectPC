@@ -7,6 +7,8 @@
 언리얼 엔진 5.4 기반으로 개발한 멀티플레이 오토 배틀러 게임 프로젝트입니다.  
 Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 
+[기술 문서 링크](https://drive.google.com/file/d/1kzrute3VOy9PtB188sV5Atnsk53Go186/view?usp=sharing)
+
 ---
 
 ## ✅ 프로젝트 개요

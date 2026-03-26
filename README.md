@@ -79,13 +79,14 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 
 ### 컴포넌트 기반 설계
 - 거대한 단일 클래스 대신 기능 단위로 컴포넌트 분리, 단일 책임 원칙(SRP) 준수
-  - APlayerState에서 인벤토리 기능을 직접 구현하지 않고, UPCPlayerInventory의 컴포넌트를 소유하는 형태로 설계
+  - APCPlayerState에서 인벤토리 기능을 직접 구현하지 않고, UPCPlayerInventory의 컴포넌트를 소유하는 형태로 설계
   - APCCombatGameState 역시 상점 로직을 UPCShopManager 컴포넌트로 분리
   - 시스템 간 결합도를 낮춰 유지보수성과 재사용성 극대화
  
 ### GAS 기반 캐릭터 설계
 - 플레이어의 스탯을 AttributeSet으로 관리, 플레이어의 행동을 UGameplayAbility(GA) 클래스로 객체화
   - AttributeSet은 서버에서만 변경되고 클라이언트에 복제되어 데이터 무결성 보장
+  - AttributeSet 변경 시 Delegate를 통해 UI에 자동 반영 (Observer Pattern)
   - 플레이어가 상점 기능 이용 시 APCCombatGameState 와 직접 결합하지 않고 GA를 통한 요청만 수행하여 결합도 감소
 
 ### 서버 권위 구조의 중앙화된 상점 시스템
@@ -101,6 +102,7 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
  
 ### 발사체 오브젝트 풀링
 - 오브젝트 풀링을 통한 다수의 발사체 관리
+  - 전투 중 발사체가 반복 생성/소멸하여 발생하는 GC 부하를 줄임
 - Queue 자료구조를 활용하여 미리 생성해둔 발사체 객체를 순환 재사용
   - Stack 대비 객체를 균등하게 순환 사용하여, 미초기화 상태에서 재사용 위험 방지
   - Array 대비 삽입/꺼내기 모두 O(1)로 발사체 사용 시 발생하는 연산 비용 절감

@@ -78,7 +78,8 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 ## 🏗️ 핵심 아키텍처
 
 ### 컴포넌트 기반 설계
-<img width="5552" height="2596" alt="Image" src="https://github.com/user-attachments/assets/c7e289f4-a1dc-40a0-8160-6a8a19cad8db" />
+<img width="5552" height="2596" alt="Image" src="https://github.com/user-attachments/assets/4cdeacf4-29c3-44fb-9ed0-f212fd96a271" />
+
 - 거대한 단일 클래스 대신 기능 단위로 컴포넌트 분리, 단일 책임 원칙(SRP) 준수
   - APCPlayerState에서 인벤토리 기능을 직접 구현하지 않고, UPCPlayerInventory의 컴포넌트를 소유하는 형태로 설계
   - APCCombatGameState 역시 상점 로직을 UPCShopManager 컴포넌트로 분리

@@ -58,4 +58,14 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 
 ## 3. 게임 플로우
 
+- Ip Input Level -> Lobby Level -> Combat Level로 이어지는 선형적 구조
+- 각 레벨별 명확한 책임 분리
+
+### 3-1. IP Input Level
 <img width="585" height="980" alt="Image" src="https://github.com/user-attachments/assets/2a3d6217-00bb-40f0-94dd-0177bdd6bce5" />
+
+### 3-2. Lobby Level
+<img width="1094" height="1058" alt="Image" src="https://github.com/user-attachments/assets/72063f84-fef5-4ad6-b518-90f269bd178e" />
+
+### 3-3. Combat Level
+<img width="876" height="1067" alt="Image" src="https://github.com/user-attachments/assets/3c18da4c-ec9d-4683-9f0e-d4cccf6eeca6" />

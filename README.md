@@ -1,6 +1,6 @@
 # ProjectPC – Paragon Chess
 
-[![Paragon Chess Gameplay](https://img.youtube.com/vi/My3fQt4-K18/hqdefault.jpg)](https://youtu.be/My3fQt4-K18)
+[![Paragon Chess Gameplay](https://img.youtube.com/vi/My3fQt4-K18/hqdefault.jpg)](https://youtu.be/r3RWHsHRCXo)
 
 [이미지 클릭 시 유튜브로 이동합니다]
 

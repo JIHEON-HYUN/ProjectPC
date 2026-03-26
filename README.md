@@ -56,4 +56,6 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 
 ---
 
+## 3. 게임 플로우
 
+<img width="585" height="980" alt="Image" src="https://github.com/user-attachments/assets/2a3d6217-00bb-40f0-94dd-0177bdd6bce5" />

@@ -81,8 +81,8 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 <img width="5552" height="2596" alt="Image" src="https://github.com/user-attachments/assets/4cdeacf4-29c3-44fb-9ed0-f212fd96a271" />
 
 - 거대한 단일 클래스 대신 기능 단위로 컴포넌트 분리, 단일 책임 원칙(SRP) 준수
-  - APCPlayerState에서 인벤토리 기능을 직접 구현하지 않고, UPCPlayerInventory의 컴포넌트를 소유하는 형태로 설계
-  - APCCombatGameState 역시 상점 로직을 UPCShopManager 컴포넌트로 분리
+  - APCCombatGameState에서 상점 로직을 직접 구현하지 않고, UPCShopManager 컴포넌트를 소유하는 형태로 설계
+  - APCPlayerState도 마찬가지로 인벤토리 기능을 직접 구현하는 대신 UPCPlayerInventory 컴포넌트를 소유
   - 시스템 간 결합도를 낮춰 유지보수성과 재사용성 극대화
  
 ### GAS 기반 캐릭터 설계

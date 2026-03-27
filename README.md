@@ -89,6 +89,9 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 - 플레이어의 스탯을 AttributeSet으로 관리, 플레이어의 행동을 UGameplayAbility(GA) 클래스로 객체화
   - AttributeSet은 서버에서만 변경되고 클라이언트에 복제되어 데이터 무결성 보장
   - AttributeSet 변경 시 Delegate를 통해 UI에 자동 반영 (Observer Pattern)
+  ```cpp
+  
+  ```
   - 플레이어가 상점 기능 이용 시 APCCombatGameState 와 직접 결합하지 않고 GA를 통한 요청만 수행하여 결합도 감소
 
 ### 서버 권위 구조의 중앙화된 상점 시스템

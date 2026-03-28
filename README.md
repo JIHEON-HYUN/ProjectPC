@@ -148,7 +148,7 @@ https://github.com/JIHEON-HYUN/ProjectPC/blob/7380437ab0c8f925d149dafb2bea589abc
  
 ### 서버-클라이언트 복제를 고려한 인벤토리 시스템
 - 아이템은 클래스 객체가 아닌 데이터값만을 가진 구조체
-https://github.com/JIHEON-HYUN/ProjectPC/blob/87c75d6c143ec71204c575602ed0a7b4d49c2714/Source/ProjectPC/Public/Item/PCItemData.h#L16-L40
+https://github.com/JIHEON-HYUN/ProjectPC/blob/87c75d6c143ec71204c575602ed0a7b4d49c2714/Source/ProjectPC/Public/Item/PCItemData.h#L21-L35
 - 플레이어가 가진 아이템 목록은 FGameplayTag 기반으로 관리
 - 아이템 데이터는 UPCItemManagerSubsystem에서 FGameplayTag 기반으로 Get
   - 실제로 복제되는 데이터는 FGameplayTag로 제한하여 메모리 사용량 절감

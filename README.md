@@ -139,11 +139,11 @@ https://github.com/JIHEON-HYUN/ProjectPC/blob/7380437ab0c8f925d149dafb2bea589abc
   - 플레이어가 상점 기능 이용 시 APCPlayerState나 UPCShopManager와 직접 결합하지 않고 GA를 통한 요청만 수행하여 결합도 감소
   - GA 활성화는 서버 권위에서 이루어지며, 이후 변동사항은 각 클라에 복제됨 (서버 권위 구조의 중앙화된 상점 시스템)
   <img width="2349" height="1122" alt="image" src="https://github.com/user-attachments/assets/fed2e7ba-463d-4255-8048-dbfd79cac0fb" /><br />
-  => UI 상호작용 (경험치 구매 버튼 클릭)
+  1. UI 상호작용 (경험치 구매 버튼 클릭)
   https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/UI/Shop/PCShopWidget.cpp#L171-L177
-  => 서버 RPC 요청
+  2. 서버 RPC 요청
   https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/Controller/Player/PCCombatPlayerController.cpp#L358-L365
-  => GA 활성화 요청
+  3. GA 활성화 요청
   https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/Controller/Player/PCCombatPlayerController.cpp#L432-L443
  
 ### 서버-클라이언트 복제를 고려한 인벤토리 시스템
@@ -152,9 +152,7 @@ https://github.com/JIHEON-HYUN/ProjectPC/blob/87c75d6c143ec71204c575602ed0a7b4d4
 - 플레이어가 가진 아이템 목록은 해당 아이템의 ItemTag(FGameplayTag) 기반으로 관리
 https://github.com/JIHEON-HYUN/ProjectPC/blob/3516a3ae62e8751f261f08edd9bb3df6d6d67e84/Source/ProjectPC/Public/Item/PCPlayerInventory.h#L28-L30
 - 아이템 데이터는 UPCItemManagerSubsystem에서 FGameplayTag 기반으로 Get
-https://github.com/JIHEON-HYUN/ProjectPC/blob/3516a3ae62e8751f261f08edd9bb3df6d6d67e84/Source/ProjectPC/Public/GameFramework/WorldSubsystem/PCItemManagerSubsystem.h#L41-L43
 https://github.com/JIHEON-HYUN/ProjectPC/blob/3516a3ae62e8751f261f08edd9bb3df6d6d67e84/Source/ProjectPC/Private/GameFramework/WorldSubsystem/PCItemManagerSubsystem.cpp#L28-L31
-https://github.com/JIHEON-HYUN/ProjectPC/blob/3516a3ae62e8751f261f08edd9bb3df6d6d67e84/Source/ProjectPC/Private/GameFramework/WorldSubsystem/PCItemManagerSubsystem.cpp#L124-L138
   - 실제로 복제되는 데이터는 FGameplayTag로 제한하여 메모리 사용량 절감
   - 아이콘 이미지 같은 에셋은 TSoftObjectPtr로 관리, 필요한 시점에만 비동기 로드하여 로딩 스파이크 방지
  

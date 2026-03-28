@@ -124,10 +124,10 @@ https://github.com/JIHEON-HYUN/ProjectPC/blob/7380437ab0c8f925d149dafb2bea589abc
 ## 🏗️ 핵심 아키텍처
 
 ### 컴포넌트 기반 설계
-<img width="5552" height="2596" alt="Image" src="https://github.com/user-attachments/assets/4cdeacf4-29c3-44fb-9ed0-f212fd96a271" />
-
 - 거대한 단일 클래스 대신 기능 단위로 컴포넌트 분리, 단일 책임 원칙(SRP) 준수
   - APCCombatGameState에서 상점 로직을 직접 구현하지 않고, UPCShopManager 컴포넌트를 소유하는 형태로 설계
+  https://github.com/JIHEON-HYUN/ProjectPC/blob/7dcfa34c676d92760706365baff8c930cd668282/Source/ProjectPC/Public/GameFramework/GameState/PCCombatGameState.h#L544-L546
+  https://github.com/JIHEON-HYUN/ProjectPC/blob/7dcfa34c676d92760706365baff8c930cd668282/Source/ProjectPC/Public/Shop/PCShopManager.h#L21
   - APCPlayerState도 마찬가지로 인벤토리 기능을 직접 구현하는 대신 UPCPlayerInventory 컴포넌트를 소유
   - 시스템 간 결합도를 낮춰 유지보수성과 재사용성 극대화
  
@@ -135,9 +135,6 @@ https://github.com/JIHEON-HYUN/ProjectPC/blob/7380437ab0c8f925d149dafb2bea589abc
 - 플레이어의 스탯을 AttributeSet으로 관리, 플레이어의 행동을 UGameplayAbility(GA) 클래스로 객체화
   - AttributeSet은 서버에서만 변경되고 클라이언트에 복제되어 데이터 무결성 보장
   - AttributeSet 변경 시 Delegate를 통해 UI에 자동 반영 (Observer Pattern)
-  ```cpp
-  
-  ```
   - 플레이어가 상점 기능 이용 시 APCCombatGameState 와 직접 결합하지 않고 GA를 통한 요청만 수행하여 결합도 감소
 
 ### 서버 권위 구조의 중앙화된 상점 시스템

@@ -7,9 +7,6 @@
 
 언리얼 엔진 5.4 기반으로 개발한 멀티플레이 오토 배틀러 게임 프로젝트입니다.  
 Paragon Character와 TFT 에셋을 활용해 제작했습니다.
-
-### 기술 문서 링크
-- [Google Drive](https://drive.google.com/file/d/1kzrute3VOy9PtB188sV5Atnsk53Go186/view?usp=sharing)
 <br />
 
 ---
@@ -20,6 +17,7 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 - [프로젝트 구조](#-프로젝트-구조)
 - [게임 플로우](#-게임-플로우)
 - [핵심 아키텍처](#-핵심-아키텍처)
+- [기술 문서 링크](#-기술-문서-링크)
 <br />
 
 ---
@@ -174,3 +172,9 @@ https://github.com/JIHEON-HYUN/ProjectPC/blob/9d37bd716b56dc5b2598187a4d27292748
   - 전투 중 발사체가 반복 생성/소멸하여 발생하는 GC 부하를 줄임
   - Stack 대비 객체를 균등하게 순환 사용하여, 미초기화 상태에서 재사용 위험 방지
   - Array 대비 삽입/꺼내기 모두 O(1)로 발사체 사용 시 발생하는 연산 비용 절감
+<br />
+
+---
+
+## 🔗 기술 문서 링크
+- [Google Drive](https://drive.google.com/file/d/1kzrute3VOy9PtB188sV5Atnsk53Go186/view?usp=sharing)

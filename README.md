@@ -125,10 +125,12 @@ https://github.com/JIHEON-HYUN/ProjectPC/blob/7380437ab0c8f925d149dafb2bea589abc
 
 ### 컴포넌트 기반 설계
 - 거대한 단일 클래스 대신 기능 단위로 컴포넌트 분리, 단일 책임 원칙(SRP) 준수
-  - APCCombatGameState에서 상점 로직을 직접 구현하지 않고, UPCShopManager 컴포넌트를 소유하는 형태로 설계
+  - APCCombatGameState에서 상점 로직을 직접 구현하지 않고, UPCShopManager 액터 컴포넌트를 소유하는 형태로 설계
   https://github.com/JIHEON-HYUN/ProjectPC/blob/7dcfa34c676d92760706365baff8c930cd668282/Source/ProjectPC/Public/GameFramework/GameState/PCCombatGameState.h#L544-L546
   https://github.com/JIHEON-HYUN/ProjectPC/blob/7dcfa34c676d92760706365baff8c930cd668282/Source/ProjectPC/Public/Shop/PCShopManager.h#L21
   - APCPlayerState도 마찬가지로 인벤토리 기능을 직접 구현하는 대신 UPCPlayerInventory 컴포넌트를 소유
+  https://github.com/JIHEON-HYUN/ProjectPC/blob/261cef11a9cf20bde3d161e2398b19f86305d480/Source/ProjectPC/Public/GameFramework/PlayerState/PCPlayerState.h#L180-L182
+  https://github.com/JIHEON-HYUN/ProjectPC/blob/261cef11a9cf20bde3d161e2398b19f86305d480/Source/ProjectPC/Public/Item/PCPlayerInventory.h#L15
   - 시스템 간 결합도를 낮춰 유지보수성과 재사용성 극대화
  
 ### GAS 기반 캐릭터 설계

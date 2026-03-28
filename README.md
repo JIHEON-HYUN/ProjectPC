@@ -87,6 +87,8 @@ ProjectPC/Source/ProjectPC/
 │   └── Utility/
 └── Private/                 # 구현 파일 (.cpp) — Public과 동일 구조
 ```
+[`.gitignore`](./.gitignore)
+
 <br />
 
 ---

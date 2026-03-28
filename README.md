@@ -12,7 +12,7 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 - [Google Drive](https://drive.google.com/file/d/1kzrute3VOy9PtB188sV5Atnsk53Go186/view?usp=sharing)
 
 ---
-<br /><br />
+<br />
 ## ✅ 프로젝트 개요
 
 - **프로젝트명** : ProjectPC – Paragon Chess

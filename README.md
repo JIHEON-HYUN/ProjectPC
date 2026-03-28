@@ -139,8 +139,11 @@ https://github.com/JIHEON-HYUN/ProjectPC/blob/7380437ab0c8f925d149dafb2bea589abc
   - 플레이어가 상점 기능 이용 시 APCPlayerState나 UPCShopManager와 직접 결합하지 않고 GA를 통한 요청만 수행하여 결합도 감소
   <img width="2349" height="1122" alt="image" src="https://github.com/user-attachments/assets/fed2e7ba-463d-4255-8048-dbfd79cac0fb" /><br />
   https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/UI/Shop/PCShopWidget.cpp#L171-L177
+  => UI 상호작용 (경험치 구매 버튼 클릭)
   https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/Controller/Player/PCCombatPlayerController.cpp#L358-L365
+  => 서버 RPC 요청
   https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/Controller/Player/PCCombatPlayerController.cpp#L432-L443
+  => GA 활성화 요청 (서버 Authority)
 
 
 ### 서버 권위 구조의 중앙화된 상점 시스템

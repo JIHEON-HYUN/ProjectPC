@@ -60,6 +60,16 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 
 ---
 
+## 📱 프로젝트 구조
+
+- 언리얼 엔진의 GAS(Gameplay Ability System) 를 활용한 확장 가능한 캐릭터 능력 시스템 구현
+- 서버 권위(Server Authority) 구조 기반으로 데이터 무결성 보장
+- 서버-클라이언트 복제를 고려한 네트워크 친화적 시스템 설계
+- 오브젝트 풀링을 통한 발사체 시스템 최적화로 GC 호출 빈도 및 부하 감소
+- 기능별 컴포넌트 분리를 통한 유지보수성과 확장성 확보
+
+---
+
 ## 🎮 게임 플로우
 
 - Ip Input Level -> Lobby Level -> Combat Level로 이어지는 선형적 구조

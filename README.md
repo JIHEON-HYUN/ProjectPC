@@ -49,6 +49,7 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
   - 플레이어 전원이 공유하는 중앙화된 상점 시스템 구현
   - 아이템 베이스 및 인벤토리 시스템 구현
   - 유닛 발사체 시스템 구현
+<br />
 
 ---
 
@@ -59,6 +60,7 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 - 서버-클라이언트 복제를 고려한 네트워크 친화적 시스템 설계
 - 오브젝트 풀링을 통한 발사체 시스템 최적화로 GC 호출 빈도 및 부하 감소
 - 기능별 컴포넌트 분리를 통한 유지보수성과 확장성 확보
+<br />
 
 ---
 
@@ -69,6 +71,7 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 - 서버-클라이언트 복제를 고려한 네트워크 친화적 시스템 설계
 - 오브젝트 풀링을 통한 발사체 시스템 최적화로 GC 호출 빈도 및 부하 감소
 - 기능별 컴포넌트 분리를 통한 유지보수성과 확장성 확보
+<br />
 
 ---
 
@@ -85,6 +88,7 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 
 ### Combat Level
 <img width="876" height="1067" alt="Image" src="https://github.com/user-attachments/assets/3c18da4c-ec9d-4683-9f0e-d4cccf6eeca6" />
+<br />
 
 ---
 

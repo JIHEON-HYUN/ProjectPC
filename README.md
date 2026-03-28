@@ -137,21 +137,18 @@ https://github.com/JIHEON-HYUN/ProjectPC/blob/7380437ab0c8f925d149dafb2bea589abc
   - AttributeSet 변경 시 Delegate를 통해 UI에 자동 반영 (Observer Pattern)
   https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/UI/PlayerMainWidget/PCPlayerOverheadWidget.cpp#L68-L81
   - 플레이어가 상점 기능 이용 시 APCPlayerState나 UPCShopManager와 직접 결합하지 않고 GA를 통한 요청만 수행하여 결합도 감소
+  - GA 활성화는 서버 권위에서 이루어지며, 이후 변동사항은 각 클라에 복제됨 (서버 권위 구조의 중앙화된 상점 시스템)
   <img width="2349" height="1122" alt="image" src="https://github.com/user-attachments/assets/fed2e7ba-463d-4255-8048-dbfd79cac0fb" /><br />
   https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/UI/Shop/PCShopWidget.cpp#L171-L177
   => UI 상호작용 (경험치 구매 버튼 클릭)
   https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/Controller/Player/PCCombatPlayerController.cpp#L358-L365
   => 서버 RPC 요청
   https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/Controller/Player/PCCombatPlayerController.cpp#L432-L443
-  => GA 활성화 요청 (서버 Authority)
-
-
-### 서버 권위 구조의 중앙화된 상점 시스템
-- 모든 상점 로직은 서버에서만 처리
-  - 상점 데이터는 APCCombatGameState가 소유하는 액터 컴포넌트 APCShopManager에서 관리
-  - UI는 Delegate에 바인딩만 할 뿐 강한 참조 없이 상태 변화에 반응 (Observer Pattern)
+  => GA 활성화 요청
  
 ### 서버-클라이언트 복제를 고려한 인벤토리 시스템
+- 아이템은 클래스 객체가 아닌 데이터값만을 가진 구조체
+https://github.com/JIHEON-HYUN/ProjectPC/blob/87c75d6c143ec71204c575602ed0a7b4d49c2714/Source/ProjectPC/Public/Item/PCItemData.h#L16-L40
 - 플레이어가 가진 아이템 목록은 FGameplayTag 기반으로 관리
 - 아이템 데이터는 UPCItemManagerSubsystem에서 FGameplayTag 기반으로 Get
   - 실제로 복제되는 데이터는 FGameplayTag로 제한하여 메모리 사용량 절감

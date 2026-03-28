@@ -3,8 +3,7 @@
 [![Paragon Chess Gameplay](https://img.youtube.com/vi/My3fQt4-K18/hqdefault.jpg)](https://youtu.be/r3RWHsHRCXo)
 
 [이미지 클릭 시 유튜브로 이동합니다]
-<br />
-<br />
+<br /><br />
 
 언리얼 엔진 5.4 기반으로 개발한 멀티플레이 오토 배틀러 게임 프로젝트입니다.  
 Paragon Character와 TFT 에셋을 활용해 제작했습니다.
@@ -13,7 +12,7 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 - [Google Drive](https://drive.google.com/file/d/1kzrute3VOy9PtB188sV5Atnsk53Go186/view?usp=sharing)
 
 ---
-
+<br /><br />
 ## ✅ 프로젝트 개요
 
 - **프로젝트명** : ProjectPC – Paragon Chess

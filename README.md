@@ -153,12 +153,14 @@ https://github.com/JIHEON-HYUN/ProjectPC/blob/87c75d6c143ec71204c575602ed0a7b4d4
 https://github.com/JIHEON-HYUN/ProjectPC/blob/3516a3ae62e8751f261f08edd9bb3df6d6d67e84/Source/ProjectPC/Public/Item/PCPlayerInventory.h#L28-L30
 - 아이템 데이터는 UPCItemManagerSubsystem에서 FGameplayTag 기반으로 Get
 https://github.com/JIHEON-HYUN/ProjectPC/blob/3516a3ae62e8751f261f08edd9bb3df6d6d67e84/Source/ProjectPC/Private/GameFramework/WorldSubsystem/PCItemManagerSubsystem.cpp#L28-L31
-  - 실제로 복제되는 데이터는 FGameplayTag로 제한하여 메모리 사용량 절감
+  - 실제로 복제되는 데이터는 FGameplayTag 배열로 제한하여 메모리 사용량 절감
   - 아이콘 이미지 같은 에셋은 TSoftObjectPtr로 관리, 필요한 시점에만 비동기 로드하여 로딩 스파이크 방지
  
 ### 발사체 오브젝트 풀링
 - 오브젝트 풀링을 통한 다수의 발사체 관리
-  - 전투 중 발사체가 반복 생성/소멸하여 발생하는 GC 부하를 줄임
 - Queue 자료구조를 활용하여 미리 생성해둔 발사체 객체를 순환 재사용
+https://github.com/JIHEON-HYUN/ProjectPC/blob/9d37bd716b56dc5b2598187a4d272927483070d7/Source/ProjectPC/Public/GameFramework/WorldSubsystem/PCProjectilePoolSubsystem.h#L26
+https://github.com/JIHEON-HYUN/ProjectPC/blob/9d37bd716b56dc5b2598187a4d272927483070d7/Source/ProjectPC/Private/GameFramework/WorldSubsystem/PCProjectilePoolSubsystem.cpp#L10-L26
+  - 전투 중 발사체가 반복 생성/소멸하여 발생하는 GC 부하를 줄임
   - Stack 대비 객체를 균등하게 순환 사용하여, 미초기화 상태에서 재사용 위험 방지
   - Array 대비 삽입/꺼내기 모두 O(1)로 발사체 사용 시 발생하는 연산 비용 절감

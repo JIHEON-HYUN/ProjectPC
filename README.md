@@ -88,8 +88,11 @@ ProjectPC/Source/ProjectPC/
 │   └── Utility/
 └── Private/                 # 구현 파일 (.cpp) — Public과 동일 구조
 ```
-[`.gitignore`](./.gitignore#L10)
+- 기능 단위로 묶어 폴더링
 
+### 에셋 관리 방식
+[`.gitignore - CustomAsset폴더 추적X`](./.gitignore#L10)
+<img width="847" height="692" alt="Image" src="https://github.com/user-attachments/assets/969cc06a-c488-4b10-88a3-7d7c20b75a0b" />
 <br />
 
 ---

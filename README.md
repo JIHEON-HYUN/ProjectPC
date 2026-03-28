@@ -92,6 +92,7 @@ ProjectPC/Source/ProjectPC/
 
 ### 에셋 관리 방식
 <img width="847" height="692" alt="Image" src="https://github.com/user-attachments/assets/969cc06a-c488-4b10-88a3-7d7c20b75a0b" />
+<br />
 - Content/CustomAsset/ Git 추적에서 제외
 - 👉 [`.gitignore`](./.gitignore)
 - 용량을 크게 차지하는 에셋들은 일괄적으로 CustomAsset폴더에 보관

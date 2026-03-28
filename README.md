@@ -94,7 +94,7 @@ ProjectPC/Source/ProjectPC/
 - Content/CustomAsset/ Git 추적에서 제외
 https://github.com/JIHEON-HYUN/ProjectPC/blob/7380437ab0c8f925d149dafb2bea589abc7a3b91/.gitignore#L10
 - 용량을 크게 차지하는 에셋들은 일괄적으로 CustomAsset폴더에 보관
-- 프로젝트 진행 중, 추가/삭제된 에셋은 공유 폴더에 업로드 후 issue 공유
+- 프로젝트 진행 중, 추가/수정된 에셋은 공유 폴더에 업로드 후 issue 공유
 - 레포지토리 용량 절감, 바이너리 에셋 충돌로 인한 Merge 오류 방지
 <img width="847" height="692" alt="Image" src="https://github.com/user-attachments/assets/969cc06a-c488-4b10-88a3-7d7c20b75a0b" />
 

@@ -66,6 +66,7 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 
 ## 📱 프로젝트 구조
 
+### 디렉토리 구조
 ```
 ProjectPC/Source/ProjectPC/
 ├── Public/                  # 헤더 파일 (.h)

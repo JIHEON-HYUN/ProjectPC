@@ -66,11 +66,27 @@ Paragon Character와 TFT 에셋을 활용해 제작했습니다.
 
 ## 📱 프로젝트 구조
 
-- 언리얼 엔진의 GAS(Gameplay Ability System) 를 활용한 확장 가능한 캐릭터 능력 시스템 구현
-- 서버 권위(Server Authority) 구조 기반으로 데이터 무결성 보장
-- 서버-클라이언트 복제를 고려한 네트워크 친화적 시스템 설계
-- 오브젝트 풀링을 통한 발사체 시스템 최적화로 GC 호출 빈도 및 부하 감소
-- 기능별 컴포넌트 분리를 통한 유지보수성과 확장성 확보
+```
+ProjectPC/Source/ProjectPC/
+├── Public/                  # 헤더 파일 (.h)
+│   ├── AbilitySystem/       # GAS (Gameplay Ability System)
+│   │   ├── Player/          # GA, GE, AttributeSet, ExecutionCalculation
+│   │   └── Unit/            # GA(Synergy 포함), GC, AttributeSet, EffectSpec
+│   ├── AI/                  # AI Task
+│   ├── Animation/           # 플레이어/유닛 애니메이션, Notify
+│   ├── Character/           # 플레이어(카메라), 유닛, 투사체
+│   ├── Component/
+│   ├── Controller/          # 플레이어/유닛 컨트롤러
+│   ├── DataAsset/           # 아이템, 플레이어, 유닛, 시너지 등 데이터 에셋
+│   ├── DynamicUIActor/
+│   ├── GameFramework/       # GameMode, GameState, GameInstance, Subsystem, Save 등
+│   ├── Item/
+│   ├── Shop/
+│   ├── Synergy/
+│   ├── UI/                  # Board, Shop, Lobby, StartMenu, 유닛 UI 등
+│   └── Utility/
+└── Private/                 # 구현 파일 (.cpp) — Public과 동일 구조
+```
 <br />
 
 ---

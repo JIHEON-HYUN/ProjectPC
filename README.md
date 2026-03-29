@@ -148,11 +148,20 @@ ProjectPC/Source/ProjectPC/
   - GA 활성화는 서버 권위에서 이루어지며, 이후 변동사항은 각 클라에 복제됨 (서버 권위 구조의 중앙화된 상점 시스템)
   <img width="2349" height="1122" alt="image" src="https://github.com/user-attachments/assets/fed2e7ba-463d-4255-8048-dbfd79cac0fb" /><br />
   1. UI 상호작용 (경험치 구매 버튼 클릭)
-  https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/UI/Shop/PCShopWidget.cpp#L171-L177
-  2. 서버 RPC 요청
-  https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/Controller/Player/PCCombatPlayerController.cpp#L358-L365
-  3. GA 활성화 요청
-  https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/Controller/Player/PCCombatPlayerController.cpp#L432-L443
+  👉 [`PCShopWidget.cpp`](https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/UI/Shop/PCShopWidget.cpp#L171-L177)
+  ```cpp
+  void UPCShopWidget::OnClickedBuyXP()
+  {
+  	if (CachedController.IsValid())
+  	{
+  		CachedController->ShopRequest_BuyXP();
+  	}
+  }
+  ```
+  3. 서버 RPC 요청
+  👉 [`PCCombatPlayerController.cpp`](https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/Controller/Player/PCCombatPlayerController.cpp#L358-L365)
+  4. GA 활성화 요청
+  👉 [`PCCombatPlayerController.cpp`](https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/Controller/Player/PCCombatPlayerController.cpp#L432-L443)
  
 ### 서버-클라이언트 복제를 고려한 인벤토리 시스템
 - 아이템은 데이터값만을 가진 구조체<br />

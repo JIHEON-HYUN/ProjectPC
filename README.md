@@ -100,7 +100,7 @@ ProjectPC/Source/ProjectPC/
 
 ### 에셋 관리 방식
 - Content/CustomAsset/ Git 추적에서 제외<br />
-[`.gitignore`](https://github.com/JIHEON-HYUN/ProjectPC/blob/7380437ab0c8f925d149dafb2bea589abc7a3b91/.gitignore#L10)
+👉 [`.gitignore`](https://github.com/JIHEON-HYUN/ProjectPC/blob/7380437ab0c8f925d149dafb2bea589abc7a3b91/.gitignore#L10)
 - 용량을 크게 차지하는 에셋들은 일괄적으로 CustomAsset폴더에 보관
 - 프로젝트 진행 중, 추가/수정된 에셋은 공유 폴더에 업로드 후 issue 공유
 - 레포지토리 용량 절감, 바이너리 에셋 충돌로 인한 Merge 오류 방지
@@ -134,16 +134,16 @@ ProjectPC/Source/ProjectPC/
 ### 컴포넌트 기반 설계
 - 거대한 단일 클래스 대신 기능 단위로 컴포넌트 분리, 단일 책임 원칙(SRP) 준수
   - APCCombatGameState에서 상점 로직을 직접 구현하지 않고, UPCShopManager 액터 컴포넌트를 소유하는 형태로 설계<br />
-  [`PCCombatGameState.cpp`](https://github.com/JIHEON-HYUN/ProjectPC/blob/7dcfa34c676d92760706365baff8c930cd668282/Source/ProjectPC/Public/GameFramework/GameState/PCCombatGameState.h#L544-L546)
+  👉 [`PCCombatGameState.h`](https://github.com/JIHEON-HYUN/ProjectPC/blob/7dcfa34c676d92760706365baff8c930cd668282/Source/ProjectPC/Public/GameFramework/GameState/PCCombatGameState.h#L544-L546)
   - APCPlayerState도 마찬가지로 인벤토리 기능을 직접 구현하는 대신 UPCPlayerInventory 컴포넌트를 소유<br />
-  [`PCPlayerState.cpp`](https://github.com/JIHEON-HYUN/ProjectPC/blob/261cef11a9cf20bde3d161e2398b19f86305d480/Source/ProjectPC/Public/GameFramework/PlayerState/PCPlayerState.h#L180-L182)
+  👉 [`PCPlayerState.h`](https://github.com/JIHEON-HYUN/ProjectPC/blob/261cef11a9cf20bde3d161e2398b19f86305d480/Source/ProjectPC/Public/GameFramework/PlayerState/PCPlayerState.h#L180-L182)
   - 시스템 간 결합도를 낮춰 유지보수성과 재사용성 극대화
  
 ### GAS 기반 캐릭터 설계
 - 플레이어의 스탯을 AttributeSet으로 관리, 플레이어의 행동을 UGameplayAbility(GA) 클래스로 객체화
   - AttributeSet은 서버에서만 변경되고 클라이언트에 복제되어 데이터 무결성 보장
-  - AttributeSet 변경 시 Delegate를 통해 UI에 자동 반영 (Observer Pattern)
-  [`PCPlayerOverheadWidget.cpp`](https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/UI/PlayerMainWidget/PCPlayerOverheadWidget.cpp#L68-L81)
+  - AttributeSet 변경 시 Delegate를 통해 UI에 자동 반영 (Observer Pattern)<br />
+  👉 [`PCPlayerOverheadWidget.cpp`](https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/UI/PlayerMainWidget/PCPlayerOverheadWidget.cpp#L68-L81)
   - 플레이어가 상점 기능 이용 시 APCPlayerState나 UPCShopManager와 직접 결합하지 않고 GA를 통한 요청만 수행하여 결합도 감소
   - GA 활성화는 서버 권위에서 이루어지며, 이후 변동사항은 각 클라에 복제됨 (서버 권위 구조의 중앙화된 상점 시스템)
   <img width="2349" height="1122" alt="image" src="https://github.com/user-attachments/assets/fed2e7ba-463d-4255-8048-dbfd79cac0fb" /><br />
@@ -156,18 +156,18 @@ ProjectPC/Source/ProjectPC/
  
 ### 서버-클라이언트 복제를 고려한 인벤토리 시스템
 - 아이템은 데이터값만을 가진 구조체<br />
-[`PCItemData.h`](https://github.com/JIHEON-HYUN/ProjectPC/blob/87c75d6c143ec71204c575602ed0a7b4d49c2714/Source/ProjectPC/Public/Item/PCItemData.h#L21-L35)
+👉 [`PCItemData.h`](https://github.com/JIHEON-HYUN/ProjectPC/blob/87c75d6c143ec71204c575602ed0a7b4d49c2714/Source/ProjectPC/Public/Item/PCItemData.h#L21-L35)
 - 플레이어가 가진 아이템 목록은 해당 아이템의 ItemTag(FGameplayTag) 기반으로 관리<br />
-[`PCPlayerInventory.h`](https://github.com/JIHEON-HYUN/ProjectPC/blob/3516a3ae62e8751f261f08edd9bb3df6d6d67e84/Source/ProjectPC/Public/Item/PCPlayerInventory.h#L28-L30)
+👉 [`PCPlayerInventory.h`](https://github.com/JIHEON-HYUN/ProjectPC/blob/3516a3ae62e8751f261f08edd9bb3df6d6d67e84/Source/ProjectPC/Public/Item/PCPlayerInventory.h#L28-L30)
 - 아이템 데이터는 UPCItemManagerSubsystem에서 FGameplayTag 기반으로 Get<br />
-[`PCItemManagerSubsystem.cpp`](https://github.com/JIHEON-HYUN/ProjectPC/blob/3516a3ae62e8751f261f08edd9bb3df6d6d67e84/Source/ProjectPC/Private/GameFramework/WorldSubsystem/PCItemManagerSubsystem.cpp#L28-L31)
+👉 [`PCItemManagerSubsystem.cpp`](https://github.com/JIHEON-HYUN/ProjectPC/blob/3516a3ae62e8751f261f08edd9bb3df6d6d67e84/Source/ProjectPC/Private/GameFramework/WorldSubsystem/PCItemManagerSubsystem.cpp#L28-L31)
   - 실제로 복제되는 데이터는 FGameplayTag 배열로 제한하여 메모리 사용량 절감
   - 아이콘 이미지 같은 에셋은 TSoftObjectPtr로 관리, 필요한 시점에만 비동기 로드하여 로딩 스파이크 방지
  
 ### 발사체 오브젝트 풀링
 - 오브젝트 풀링을 통한 다수의 발사체 관리
 - Queue 자료구조를 활용하여 미리 생성해둔 발사체 객체를 순환 재사용<br />
-[`PCProjectilePoolSubsystem.h`](https://github.com/JIHEON-HYUN/ProjectPC/blob/9d37bd716b56dc5b2598187a4d272927483070d7/Source/ProjectPC/Public/GameFramework/WorldSubsystem/PCProjectilePoolSubsystem.h#L26)
+👉 [`PCProjectilePoolSubsystem.h`](https://github.com/JIHEON-HYUN/ProjectPC/blob/9d37bd716b56dc5b2598187a4d272927483070d7/Source/ProjectPC/Public/GameFramework/WorldSubsystem/PCProjectilePoolSubsystem.h#L26)
 [`PCProjectilePoolSubsystem.cpp`](https://github.com/JIHEON-HYUN/ProjectPC/blob/9d37bd716b56dc5b2598187a4d272927483070d7/Source/ProjectPC/Private/GameFramework/WorldSubsystem/PCProjectilePoolSubsystem.cpp#L10-L26)
   - 전투 중 발사체가 반복 생성/소멸하여 발생하는 GC 부하를 줄임
   - Stack 대비 객체를 균등하게 순환 사용하여, 미초기화 상태에서 재사용 위험 방지

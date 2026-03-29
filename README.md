@@ -143,8 +143,7 @@ https://github.com/JIHEON-HYUN/ProjectPC/blob/7380437ab0c8f925d149dafb2bea589abc
 - 플레이어의 스탯을 AttributeSet으로 관리, 플레이어의 행동을 UGameplayAbility(GA) 클래스로 객체화
   - AttributeSet은 서버에서만 변경되고 클라이언트에 복제되어 데이터 무결성 보장
   - AttributeSet 변경 시 Delegate를 통해 UI에 자동 반영 (Observer Pattern)
-  [`PCPlayerOverheadWidget.cpp` L68-L81](https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be/.../PCPlayerOverheadWidget.cpp#L68-L81)
-  https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/UI/PlayerMainWidget/PCPlayerOverheadWidget.cpp#L68-L81
+  [`PCPlayerOverheadWidget.cpp` L68-L81](https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/UI/PlayerMainWidget/PCPlayerOverheadWidget.cpp#L68-L81)
   - 플레이어가 상점 기능 이용 시 APCPlayerState나 UPCShopManager와 직접 결합하지 않고 GA를 통한 요청만 수행하여 결합도 감소
   - GA 활성화는 서버 권위에서 이루어지며, 이후 변동사항은 각 클라에 복제됨 (서버 권위 구조의 중앙화된 상점 시스템)
   <img width="2349" height="1122" alt="image" src="https://github.com/user-attachments/assets/fed2e7ba-463d-4255-8048-dbfd79cac0fb" /><br />

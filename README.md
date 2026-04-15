@@ -158,7 +158,7 @@ ProjectPC/Source/ProjectPC/
   	}
   }
   ```
-  3. 서버 RPC 요청<br />
+  2. 서버 RPC 요청<br />
   👉 [`PCCombatPlayerController.cpp`](https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/Controller/Player/PCCombatPlayerController.cpp#L358-L365)
   ```cpp
   void APCCombatPlayerController::ShopRequest_BuyXP()
@@ -170,7 +170,7 @@ ProjectPC/Source/ProjectPC/
   	}
   }
   ```
-  5. GA 활성화 요청<br />
+  3. GA 활성화 요청<br />
   👉 [`PCCombatPlayerController.cpp`](https://github.com/JIHEON-HYUN/ProjectPC/blob/a4326be146b22b76ecb296ec11c181065a9ba6f9/Source/ProjectPC/Private/Controller/Player/PCCombatPlayerController.cpp#L432-L443)
   ```cpp
   void APCCombatPlayerController::Server_BuyXP_Implementation()
